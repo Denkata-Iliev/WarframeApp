@@ -4,32 +4,25 @@ package com.wfapp.retrofit.helpermodels;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class CetusCycle {
+public class EarthCycle {
 
+    private static final String NIGHT = "night";
+    private static final String DAY = "day";
     @SerializedName("id")
     @Expose
     private String id;
     @SerializedName("expiry")
     @Expose
     private String expiry;
-    @SerializedName("activation")
-    @Expose
-    private String activation;
     @SerializedName("isDay")
     @Expose
     private Boolean isDay;
-    @SerializedName("state")
-    @Expose
-    private String state;
     @SerializedName("timeLeft")
     @Expose
     private String timeLeft;
-    @SerializedName("isCetus")
+    @SerializedName("state")
     @Expose
-    private Boolean isCetus;
-    @SerializedName("shortString")
-    @Expose
-    private String shortString;
+    private String state;
 
     public String getId() {
         return id;
@@ -47,14 +40,6 @@ public class CetusCycle {
         this.expiry = expiry;
     }
 
-    public String getActivation() {
-        return activation;
-    }
-
-    public void setActivation(String activation) {
-        this.activation = activation;
-    }
-
     public Boolean getIsDay() {
         return isDay;
     }
@@ -63,36 +48,23 @@ public class CetusCycle {
         this.isDay = isDay;
     }
 
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
     public String getTimeLeft() {
-        return timeLeft;
+        return timeLeft.substring(0, 6);
     }
 
     public void setTimeLeft(String timeLeft) {
         this.timeLeft = timeLeft;
     }
 
-    public Boolean getIsCetus() {
-        return isCetus;
+    public void setState(String state) {
+        this.state = state;
     }
 
-    public void setIsCetus(Boolean isCetus) {
-        this.isCetus = isCetus;
+    public String getState() {
+        return state;
     }
 
     public String getShortString() {
-        return shortString;
+        return getTimeLeft() + " to " + (state.equals(NIGHT) ? DAY : NIGHT);
     }
-
-    public void setShortString(String shortString) {
-        this.shortString = shortString;
-    }
-
 }

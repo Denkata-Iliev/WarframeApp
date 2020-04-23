@@ -4,7 +4,7 @@ package com.wfapp.retrofit.helpermodels;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class CetusCycle {
+public class VallisCycle {
 
     @SerializedName("id")
     @Expose
@@ -12,21 +12,12 @@ public class CetusCycle {
     @SerializedName("expiry")
     @Expose
     private String expiry;
-    @SerializedName("activation")
-    @Expose
-    private String activation;
-    @SerializedName("isDay")
-    @Expose
-    private Boolean isDay;
-    @SerializedName("state")
-    @Expose
-    private String state;
     @SerializedName("timeLeft")
     @Expose
     private String timeLeft;
-    @SerializedName("isCetus")
+    @SerializedName("isWarm")
     @Expose
-    private Boolean isCetus;
+    private Boolean isWarm;
     @SerializedName("shortString")
     @Expose
     private String shortString;
@@ -47,30 +38,6 @@ public class CetusCycle {
         this.expiry = expiry;
     }
 
-    public String getActivation() {
-        return activation;
-    }
-
-    public void setActivation(String activation) {
-        this.activation = activation;
-    }
-
-    public Boolean getIsDay() {
-        return isDay;
-    }
-
-    public void setIsDay(Boolean isDay) {
-        this.isDay = isDay;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
     public String getTimeLeft() {
         return timeLeft;
     }
@@ -79,12 +46,12 @@ public class CetusCycle {
         this.timeLeft = timeLeft;
     }
 
-    public Boolean getIsCetus() {
-        return isCetus;
+    public Boolean getIsWarm() {
+        return isWarm;
     }
 
-    public void setIsCetus(Boolean isCetus) {
-        this.isCetus = isCetus;
+    public void setIsWarm(Boolean isWarm) {
+        this.isWarm = isWarm;
     }
 
     public String getShortString() {
@@ -94,5 +61,4 @@ public class CetusCycle {
     public void setShortString(String shortString) {
         this.shortString = shortString;
     }
-
 }
